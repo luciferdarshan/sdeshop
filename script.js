@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // State
-    let currentLang = localStorage.getItem("preferred_lang") || "en";
+    let currentLang = "en";
 
     // Toggle Button Ref
     const langToggle = document.getElementById("langToggle");
@@ -294,10 +294,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Toggle button text based on the active language
-        if (lang === "en") {
-            langToggle.textContent = "ಕನ್ನಡ";
-        } else {
-            langToggle.textContent = "English";
+        if (langToggle) {
+            if (lang === "en") {
+                langToggle.textContent = "ಕನ್ನಡ";
+            } else {
+                langToggle.textContent = "English";
+            }
         }
 
         // Save selection
