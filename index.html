@@ -13,6 +13,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Website Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="apple-touch-icon" href="assets/logo.svg">
 </head>
 <body>
     <!-- Top Bar -->
@@ -37,8 +40,8 @@
     <header class="main-header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <div class="logo-icon">
-                    <i data-lucide="zap" class="zap-icon"></i>
+                <div class="logo-icon-svg">
+                    <img src="assets/logo.svg" alt="SDE Logo" class="logo-svg">
                 </div>
                 <div class="logo-text">
                     <span class="brand-name" data-i18n="brand-name">Sri Durgambika</span>
@@ -72,7 +75,7 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="badge"><span class="badge-dot"></span> <span data-i18n="hero-badge">Davanagere's Trusted Electrical Experts</span></div>
-                <h1 data-i18n="hero-title">Empowering Your Home &amp; Business With Smart Solutions</h1>
+                <h1 id="heroTitleRotate" class="text-glow">Sri Durgambika Enterprises</h1>
                 <p data-i18n="hero-desc">From expert electrician services, CCTV setups, solar panels, and UPS installations to premium LED lighting and high-quality electrical supplies for your needs.</p>
                 <div class="hero-meta">
                     <div class="meta-item">
@@ -92,7 +95,7 @@
             <div class="hero-media">
                 <div class="hero-image-wrapper">
                     <div class="glowing-border"></div>
-                    <img id="heroImage" src="assets/hero_banner.jpg" alt="Sri Durgambika Enterprises - Electrical & Technology Services in Davanagere" class="hero-img">
+                    <img id="heroImage" src="assets/hero_banner.png" alt="Sri Durgambika Enterprises - Electrical & Technology Services in Davanagere" class="hero-img">
                     <div class="floating-badge badge-top">
                         <i data-lucide="zap"></i>
                         <div>
@@ -648,7 +651,9 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="logo">
-                    <div class="logo-icon"><i data-lucide="zap"></i></div>
+                    <div class="logo-icon-svg">
+                        <img src="assets/logo.svg" alt="SDE Logo" class="logo-svg">
+                    </div>
                     <div class="logo-text">
                         <span class="brand-name">Sri Durgambika</span>
                         <span class="brand-sub">ENTERPRISES</span>

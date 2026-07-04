@@ -349,6 +349,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // Apply translations on load
     applyTranslations(currentLang);
 
+    // Hero Title Language Auto-Rotation (5-second gap)
+    const heroTitleRotate = document.getElementById("heroTitleRotate");
+    if (heroTitleRotate) {
+        const titles = {
+            en: "Sri Durgambika Enterprises",
+            kn: "ಶ್ರೀ ದುರ್ಗಾಂಬಿಕಾ ಎಂಟರ್‌ಪ್ರೈಸಸ್"
+        };
+        
+        // Initialize with preferred/current language
+        let rotatorLang = currentLang;
+        heroTitleRotate.textContent = titles[rotatorLang];
+        
+        setInterval(() => {
+            heroTitleRotate.classList.add("fade-out");
+            
+            setTimeout(() => {
+                rotatorLang = rotatorLang === "en" ? "kn" : "en";
+                heroTitleRotate.textContent = titles[rotatorLang];
+                heroTitleRotate.classList.remove("fade-out");
+            }, 600); // 600ms matches the CSS transition
+        }, 5000); // 5 seconds gap
+    }
+
     // Elements
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
