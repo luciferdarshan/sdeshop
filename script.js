@@ -134,7 +134,23 @@ document.addEventListener("DOMContentLoaded", () => {
             "opt-battery": "Battery / UPS Sales & Services",
             "opt-led": "LED Lighting Sales & Decor",
             "opt-shop-purchase": "Electrical Shop Purchase",
-            "opt-other": "Other Inquiry"
+            "opt-other": "Other Inquiry",
+            "nav-gallery": "Gallery",
+            "gallery-badge": "Our Store Visuals",
+            "gallery-title": "Explore Our Physical Shop & Stock",
+            "gallery-desc": "Take a virtual tour of Sri Durgambika Enterprises in Davanagere. See our physical shopfront, customer counter, and actual product inventories in stock.",
+            "gallery-filter-all": "All Photos",
+            "gallery-filter-showroom": "Shop Showroom",
+            "gallery-filter-stock": "Stock & Inventory",
+            "gallery-item-sh1": "Shop Counter & Display",
+            "gallery-item-sh2": "Main Entrance & Facade",
+            "gallery-item-sh3": "Electrical Supply Racks",
+            "gallery-item-sh4": "Modular Display Section",
+            "gallery-item-st1": "Switchboards & Modular Plates",
+            "gallery-item-st2": "Premium LED & Panel Lights",
+            "gallery-item-st3": "Copper Wires & Conduit Fittings",
+            "gallery-item-st4": "MCBs, DBs & Distribution Gear",
+            "gallery-item-st5": "Electrical Construction Materials"
         },
         kn: {
             "top-location": "ದಾವಣಗೆರೆ, ಕರ್ನಾಟಕ",
@@ -265,7 +281,23 @@ document.addEventListener("DOMContentLoaded", () => {
             "opt-battery": "ಬ್ಯಾಟರಿ / ಯುಪಿಎಸ್ ಮಾರಾಟ ಮತ್ತು ಸೇವೆಗಳು",
             "opt-led": "ಎಲ್ಇಡಿ ಲೈಟಿಂಗ್ ಮಾರಾಟ ಮತ್ತು ಡೆಕೋರ್",
             "opt-shop-purchase": "ಎಲೆಕ್ಟ್ರಿಕಲ್ ಅಂಗಡಿ ಖರೀದಿ",
-            "opt-other": "ಇತರ ವಿಚಾರಣೆ"
+            "opt-other": "ಇತರ ವಿಚಾರಣೆ",
+            "nav-gallery": "ಗ್ಯಾಲರಿ",
+            "gallery-badge": "ನಮ್ಮ ಅಂಗಡಿಯ ಚಿತ್ರಗಳು",
+            "gallery-title": "ನಮ್ಮ ಅಂಗಡಿ ಮತ್ತು ಸ್ಟಾಕ್ ವೀಕ್ಷಿಸಿ",
+            "gallery-desc": "ದಾವಣಗೆರೆಯಲ್ಲಿರುವ ಶ್ರೀ ದುರ್ಗಾಂಬಿಕಾ ಎಂಟರ್‌ಪ್ರೈಸಸ್‌ನ ವರ್ಚುವಲ್ ಪ್ರವಾಸ ಮಾಡಿ. ನಮ್ಮ ಭೌತಿಕ ಅಂಗಡಿ, ಗ್ರಾಹಕ ಕೌಂಟರ್ ಮತ್ತು ಲಭ್ಯವಿರುವ ಪ್ರಮುಖ ಉತ್ಪನ್ನಗಳನ್ನು ಇಲ್ಲಿ ನೋಡಿ.",
+            "gallery-filter-all": "ಎಲ್ಲಾ ಚಿತ್ರಗಳು",
+            "gallery-filter-showroom": "ಅಂಗಡಿ ಪ್ರದರ್ಶನ",
+            "gallery-filter-stock": "ಉತ್ಪನ್ನಗಳ ಸ್ಟಾಕ್",
+            "gallery-item-sh1": "ಅಂಗಡಿ ಕೌಂಟರ್ ಮತ್ತು ಡಿಸ್ಪ್ಲೇ",
+            "gallery-item-sh2": "ಮುಖ್ಯ ದ್ವಾರ ಮತ್ತು ಮುಂಭಾಗ",
+            "gallery-item-sh3": "ಎಲೆಕ್ಟ್ರಿಕಲ್ ಸರಬರಾಜು ರಾಕ್ಸ್",
+            "gallery-item-sh4": "ಮಾಡ್ಯುಲರ್ ಡಿಸ್ಪ್ಲೇ ವಿಭಾಗ",
+            "gallery-item-st1": "ಸ್ವಿಚ್‌ಬೋರ್ಡ್ ಮತ್ತು ಮಾಡ್ಯುಲರ್ ಪ್ಲೇಟ್‌ಗಳು",
+            "gallery-item-st2": "ಪ್ರೀಮಿಯಂ ಎಲ್ಇಡಿ ಮತ್ತು ಪ್ಯಾನಲ್ ಲೈಟ್ಸ್",
+            "gallery-item-st3": "ತಾಮ್ರದ ವೈರ್‌ಗಳು ಮತ್ತು ಪೈಪ್‌ಗಳು",
+            "gallery-item-st4": "ಎಂಸಿಬಿಗಳು ಮತ್ತು ಹಂಚಿಕೆ ಪೆಟ್ಟಿಗೆಗಳು",
+            "gallery-item-st5": "ಕಟ್ಟಡ ವಿದ್ಯುತ್ ನಿರ್ಮಾಣ ಸಾಮಗ್ರಿಗಳು"
         }
     };
 
@@ -528,4 +560,122 @@ _Sent from Sri Durgambika Enterprises website._`;
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
         window.open(whatsappUrl, "_blank");
     };
+
+    // 6. Gallery Filtering & Lightbox Modal
+    const galleryFilters = document.querySelectorAll(".gallery-filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    const lightbox = document.getElementById("galleryLightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const closeBtn = document.querySelector(".lightbox-close");
+    const prevBtn = document.querySelector(".lightbox-prev");
+    const nextBtn = document.querySelector(".lightbox-next");
+
+    let activeGalleryItems = Array.from(galleryItems);
+    let currentImageIndex = 0;
+
+    if (galleryFilters.length > 0 && galleryItems.length > 0) {
+        galleryFilters.forEach(btn => {
+            btn.addEventListener("click", () => {
+                galleryFilters.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const filterValue = btn.getAttribute("data-gallery-filter");
+
+                galleryItems.forEach(item => {
+                    if (filterValue === "all" || item.getAttribute("data-gallery-category") === filterValue) {
+                        item.style.display = "block";
+                        item.style.opacity = "0";
+                        setTimeout(() => {
+                            item.style.opacity = "1";
+                            item.style.transition = "opacity 0.3s ease";
+                        }, 50);
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                // Update active list for lightbox navigation
+                activeGalleryItems = Array.from(galleryItems).filter(item => 
+                    filterValue === "all" || item.getAttribute("data-gallery-category") === filterValue
+                );
+            });
+        });
+
+        // Open Lightbox
+        galleryItems.forEach(item => {
+            item.addEventListener("click", () => {
+                currentImageIndex = activeGalleryItems.indexOf(item);
+                openLightbox(item);
+            });
+        });
+    }
+
+    function openLightbox(item) {
+        if (!lightbox || !lightboxImg || !lightboxCaption) return;
+        const img = item.querySelector("img");
+        const titleKey = item.querySelector(".gallery-item-title").getAttribute("data-i18n");
+        const titleText = translations[currentLang][titleKey] || img.alt;
+
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = titleText;
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden"; // Prevent page scrolling
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.style.display = "none";
+        document.body.style.overflow = "auto"; // Restore scrolling
+    }
+
+    function showNextImage() {
+        if (activeGalleryItems.length === 0) return;
+        currentImageIndex = (currentImageIndex + 1) % activeGalleryItems.length;
+        openLightbox(activeGalleryItems[currentImageIndex]);
+    }
+
+    function showPrevImage() {
+        if (activeGalleryItems.length === 0) return;
+        currentImageIndex = (currentImageIndex - 1 + activeGalleryItems.length) % activeGalleryItems.length;
+        openLightbox(activeGalleryItems[currentImageIndex]);
+    }
+
+    // Lightbox Event Listeners
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeLightbox);
+    }
+    if (lightbox) {
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            showNextImage();
+        });
+    }
+    if (prevBtn) {
+        prevBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            showPrevImage();
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+        if (lightbox && lightbox.style.display === "flex") {
+            if (e.key === "Escape") {
+                closeLightbox();
+            } else if (e.key === "ArrowRight") {
+                showNextImage();
+            } else if (e.key === "ArrowLeft") {
+                showPrevImage();
+            }
+        }
+    });
 });
