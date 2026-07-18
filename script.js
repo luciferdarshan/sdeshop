@@ -301,53 +301,82 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // State
-    let currentLang = "en";
+    // State — Kannada toggle only affects subheadings (data-i18n-sub)
+    let currentLang = localStorage.getItem("preferred_lang") || "en";
+    if (currentLang !== "en" && currentLang !== "kn") currentLang = "en";
 
-    // Toggle Button Ref
     const langToggle = document.getElementById("langToggle");
 
-    // Function to apply translation state
-    function applyTranslations(lang) {
-        // Translate text contents
-        document.querySelectorAll("[data-i18n]").forEach(elem => {
-            const key = elem.getAttribute("data-i18n");
-            if (translations[lang][key]) {
+    // Extra dictionary keys for new UI bits
+    translations.en["map-title"] = "Find us in Davanagere";
+    translations.en["map-desc"] = "Durgambika Temple Road · Open daily · Click for Google Maps";
+    translations.kn["map-title"] = "ದಾವಣಗೆರೆಯಲ್ಲಿ ನಮ್ಮನ್ನು ಹುಡುಕಿ";
+    translations.kn["map-desc"] = "ದುರ್ಗಾಂಬಿಕಾ ದೇವಸ್ಥಾನ ರಸ್ತೆ · ಪ್ರತಿದಿನ ತೆರೆದಿದೆ · ನಕ್ಷೆಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ";
+
+    function applySubheadings(lang) {
+        // ONLY subheadings / short titles
+        document.querySelectorAll("[data-i18n-sub]").forEach((elem) => {
+            const key = elem.getAttribute("data-i18n-sub");
+            if (translations[lang] && translations[lang][key]) {
                 elem.textContent = translations[lang][key];
             }
         });
-
-        // Translate placeholders
-        document.querySelectorAll("[data-i18n-placeholder]").forEach(elem => {
-            const key = elem.getAttribute("data-i18n-placeholder");
-            if (translations[lang][key]) {
-                elem.setAttribute("placeholder", translations[lang][key]);
-            }
-        });
-
-        // Toggle button text based on the active language
+        // html lang for accessibility
+        document.documentElement.lang = lang === "kn" ? "kn" : "en";
         if (langToggle) {
-            if (lang === "en") {
-                langToggle.textContent = "ಕನ್ನಡ";
-            } else {
-                langToggle.textContent = "English";
-            }
+            langToggle.textContent = lang === "en" ? "ಕನ್ನಡ" : "English";
+            langToggle.setAttribute("aria-pressed", lang === "kn" ? "true" : "false");
+            langToggle.classList.toggle("is-kn", lang === "kn");
         }
-
-        // Save selection
         localStorage.setItem("preferred_lang", lang);
     }
 
-    // Language Toggle Listener
+    // Keep full i18n available if needed later (body still English by default)
+    function applyTranslations(lang) {
+        applySubheadings(lang);
+    }
+
+    // Open-now pill (local shop hours 8:30–21:00 daily)
+    const openHoursText = document.getElementById("openHoursText");
+    const openHoursPill = document.getElementById("openHoursPill");
+    function updateOpenHours() {
+        if (!openHoursText || !openHoursPill) return;
+        const now = new Date();
+        const mins = now.getHours() * 60 + now.getMinutes();
+        const open = 8 * 60 + 30;
+        const close = 21 * 60;
+        const isOpen = mins >= open && mins < close;
+        openHoursPill.classList.toggle("is-open", isOpen);
+        openHoursPill.classList.toggle("is-closed", !isOpen);
+        openHoursText.textContent = isOpen
+            ? (currentLang === "kn" ? "ಈಗ ತೆರೆದಿದೆ · ರಾತ್ರಿ 9:00 ರವರೆಗೆ" : "Open now · until 9:00 PM")
+            : (currentLang === "kn" ? "ಈಗ ಮುಚ್ಚಿದೆ · ಬೆಳಿಗ್ಗೆ 8:30 ರಿಂದ" : "Closed now · opens 8:30 AM");
+    }
+
     if (langToggle) {
         langToggle.addEventListener("click", () => {
             currentLang = currentLang === "en" ? "kn" : "en";
-            applyTranslations(currentLang);
+            applySubheadings(currentLang);
+            updateOpenHours();
+            lucide.createIcons();
         });
     }
 
-    // Apply translations on load
-    applyTranslations(currentLang);
+    applySubheadings(currentLang);
+    updateOpenHours();
+
+    // Scroll to top
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    if (scrollTopBtn) {
+        window.addEventListener("scroll", () => {
+            scrollTopBtn.classList.toggle("visible", window.scrollY > 480);
+        });
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    lucide.createIcons();
 
     // Hero Title Language Auto-Rotation (5-second gap)
     const heroTitleRotate = document.getElementById("heroTitleRotate");

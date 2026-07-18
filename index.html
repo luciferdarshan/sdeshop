@@ -13,9 +13,14 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Website Icons -->
-    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-    <link rel="apple-touch-icon" href="assets/logo.svg">
+    <!-- Website Icons / Favicon -->
+    <link rel="icon" href="assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <meta name="theme-color" content="#0f172a">
     <!-- PostHog Analytics -->
     <script>
         !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}();
@@ -23,6 +28,29 @@
             api_host: 'https://eu.i.posthog.com',
             person_profiles: 'identified_only'
         })
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "name": "Sri Durgambika Enterprises",
+      "image": "assets/logo.png",
+      "telephone": ["+919845511088", "+918431796375"],
+      "email": "darshanempire@proton.me",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Durgambika Temple Road",
+        "addressLocality": "Davanagere",
+        "addressRegion": "Karnataka",
+        "postalCode": "577002",
+        "addressCountry": "IN"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 14.453667, "longitude": 75.929083 },
+      "openingHours": "Mo-Su 08:30-21:00",
+      "url": "https://sdeshop.vercel.app",
+      "areaServed": "Davanagere"
+    }
     </script>
 </head>
 <body>
@@ -49,11 +77,11 @@
         <div class="container header-container">
             <a href="#" class="logo">
                 <div class="logo-icon-svg">
-                    <img src="assets/logo.svg" alt="SDE Logo" class="logo-svg">
+                    <img src="assets/logo.png" alt="SDE Logo" class="logo-svg">
                 </div>
                 <div class="logo-text">
                     <span class="brand-name" data-i18n="brand-name">Sri Durgambika</span>
-                    <span class="brand-sub" data-i18n="brand-sub">ENTERPRISES</span>
+                    <span class="brand-sub" data-i18n-sub="brand-sub">ENTERPRISES</span>
                 </div>
             </a>
             
@@ -67,6 +95,9 @@
             </nav>
 
             <div class="header-actions">
+                <button type="button" class="lang-toggle" id="langToggle" aria-label="Toggle Kannada subheadings" title="Subheadings: English / ಕನ್ನಡ">
+                    ಕನ್ನಡ
+                </button>
                 <a href="https://wa.me/919845511088?text=Hi%20Basavaraj,%20I%27m%20interested%20in%20your%20electrical%2Ftechnology%20services." target="_blank" class="btn btn-primary btn-whatsapp-header" id="headerWhatsappBtn">
                     <i data-lucide="message-square"></i> <span data-i18n="btn-whatsapp">WhatsApp Chat</span>
                 </a>
@@ -82,9 +113,16 @@
         <div class="hero-bg-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <div class="badge"><span class="badge-dot"></span> <span data-i18n="hero-badge">Davanagere's Trusted Electrical Experts</span></div>
+                <div class="badge"><span class="badge-dot"></span> <span data-i18n-sub="hero-badge">Davanagere's Trusted Electrical Experts</span></div>
                 <h1 id="heroTitleRotate" class="text-glow">Sri Durgambika Enterprises</h1>
                 <p data-i18n="hero-desc">From expert electrician services, CCTV setups, solar panels, and UPS installations to premium LED lighting and high-quality electrical supplies for your needs.</p>
+                <div class="quick-actions" aria-label="Quick actions">
+                    <a class="quick-chip" href="tel:+919845511088"><i data-lucide="phone"></i> Call Basavaraj</a>
+                    <a class="quick-chip" href="tel:+918431796375"><i data-lucide="phone"></i> Call Darshan</a>
+                    <a class="quick-chip" href="https://maps.google.com/?q=14.453667,75.929083" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Directions</a>
+                    <a class="quick-chip quick-chip-wa" href="https://wa.me/919845511088" target="_blank" rel="noopener"><i data-lucide="message-square"></i> WhatsApp</a>
+                </div>
+                <p class="open-hours-pill" id="openHoursPill"><i data-lucide="clock"></i> <span id="openHoursText">Checking hours…</span></p>
                 <div class="hero-meta">
                     <div class="meta-item">
                         <i data-lucide="check-circle" class="text-accent"></i>
@@ -107,14 +145,14 @@
                     <div class="floating-badge badge-top">
                         <i data-lucide="zap"></i>
                         <div>
-                            <h4 data-i18n="badge-support-title">24/7 Support</h4>
+                            <h4 data-i18n-sub="badge-support-title">24/7 Support</h4>
                             <p data-i18n="badge-support-sub">Emergency Services</p>
                         </div>
                     </div>
                     <div class="floating-badge badge-bottom">
                         <i data-lucide="star"></i>
                         <div>
-                            <h4 data-i18n="badge-star-title">Top Rated</h4>
+                            <h4 data-i18n-sub="badge-star-title">Top Rated</h4>
                             <p data-i18n="badge-star-sub">In Davanagere</p>
                         </div>
                     </div>
@@ -129,28 +167,28 @@
             <div class="stat-card">
                 <div class="stat-icon"><i data-lucide="wrench"></i></div>
                 <div class="stat-info">
-                    <h3 data-i18n="stat-title-1">All-in-One</h3>
+                    <h3 data-i18n-sub="stat-title-1">All-in-One</h3>
                     <p data-i18n="stat-desc-1">Sales &amp; Services</p>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon"><i data-lucide="activity"></i></div>
                 <div class="stat-info">
-                    <h3 data-i18n="stat-title-2">Fast Response</h3>
+                    <h3 data-i18n-sub="stat-title-2">Fast Response</h3>
                     <p data-i18n="stat-desc-2">Electrician at your door</p>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon"><i data-lucide="award"></i></div>
                 <div class="stat-info">
-                    <h3 data-i18n="stat-title-3">Expert Care</h3>
+                    <h3 data-i18n-sub="stat-title-3">Expert Care</h3>
                     <p data-i18n="stat-desc-3">Led by Basavaraj</p>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon"><i data-lucide="thumbs-up"></i></div>
                 <div class="stat-info">
-                    <h3 data-i18n="stat-title-4">Best Pricing</h3>
+                    <h3 data-i18n-sub="stat-title-4">Best Pricing</h3>
                     <p data-i18n="stat-desc-4">Affordable rentals &amp; sales</p>
                 </div>
             </div>
@@ -161,8 +199,8 @@
     <section id="services" class="services-section">
         <div class="container">
             <div class="section-header">
-                <span class="sub-title" data-i18n="services-badge">What We Offer</span>
-                <h2 data-i18n="services-title">Our Premium Sales &amp; Services</h2>
+                <span class="sub-title" data-i18n-sub="services-badge">What We Offer</span>
+                <h2 data-i18n-sub="services-title">Our Premium Sales &amp; Services</h2>
                 <p data-i18n="services-desc">We are a one-stop-shop for your home electricity, security, clean energy, and entertainment needs in Davanagere.</p>
             </div>
 
@@ -174,7 +212,7 @@
                         <div class="service-icon-badge"><i data-lucide="cable"></i></div>
                     </div>
                     <div class="service-info">
-                        <h3 data-i18n="s1-title">Home Electrical Services</h3>
+                        <h3 data-i18n-sub="s1-title">Home Electrical Services</h3>
                         <p data-i18n="s1-desc">Professional home wiring, appliance repair, fusebox troubleshooting, switchboard installations, and all residential electrician tasks handled with strict safety standards.</p>
                         <ul class="service-features">
                             <li><i data-lucide="check"></i> <span data-i18n="s1-f1">Emergency breakdown service</span></li>
@@ -194,7 +232,7 @@
                         <div class="service-icon-badge"><i data-lucide="video"></i></div>
                     </div>
                     <div class="service-info">
-                        <h3 data-i18n="s2-title">CCTV Sales &amp; Services</h3>
+                        <h3 data-i18n-sub="s2-title">CCTV Sales &amp; Services</h3>
                         <p data-i18n="s2-desc">Protect your home, shop, or factory with state-of-the-art surveillance cameras. We offer HD cameras, IP CCTV systems, installation, remote mobile view setup, and repairs.</p>
                         <ul class="service-features">
                             <li><i data-lucide="check"></i> <span data-i18n="s2-f1">HD &amp; Night-Vision Cameras</span></li>
@@ -214,7 +252,7 @@
                         <div class="service-icon-badge"><i data-lucide="sun"></i></div>
                     </div>
                     <div class="service-info">
-                        <h3 data-i18n="s3-title">Solar Panels &amp; Solutions</h3>
+                        <h3 data-i18n-sub="s3-title">Solar Panels &amp; Solutions</h3>
                         <p data-i18n="s3-desc">Transition to green, cost-effective energy. We provide solar rooftop panel sales, installation, solar water heaters, streetlights, and dedicated maintenance.</p>
                         <ul class="service-features">
                             <li><i data-lucide="check"></i> <span data-i18n="s3-f1">Premium high-efficiency panels</span></li>
@@ -234,7 +272,7 @@
                         <div class="service-icon-badge"><i data-lucide="battery-charging"></i></div>
                     </div>
                     <div class="service-info">
-                        <h3 data-i18n="s4-title">Battery &amp; UPS Systems</h3>
+                        <h3 data-i18n-sub="s4-title">Battery &amp; UPS Systems</h3>
                         <p data-i18n="s4-desc">Uninterrupted power supplies for homes and offices. Sales and expert servicing of tubular batteries, inverter UPS systems, automotive batteries, and diagnostics.</p>
                         <ul class="service-features">
                             <li><i data-lucide="check"></i> <span data-i18n="s4-f1">Top brands available</span></li>
@@ -254,7 +292,7 @@
                         <div class="service-icon-badge"><i data-lucide="lightbulb"></i></div>
                     </div>
                     <div class="service-info">
-                        <h3 data-i18n="s5-title">LED Lightings &amp; Decor</h3>
+                        <h3 data-i18n-sub="s5-title">LED Lightings &amp; Decor</h3>
                         <p data-i18n="s5-desc">Brighten your space with energy-saving LED solutions. Retail sales of indoor/outdoor LEDs, decorative serial lighting for festivals, profile lighting, and custom layouts.</p>
                         <ul class="service-features">
                             <li><i data-lucide="check"></i> <span data-i18n="s5-f1">Energy-efficient LED bulbs &amp; panels</span></li>
@@ -275,7 +313,7 @@
                     </div>
                     <div class="service-info">
                         <div class="card-badge" data-i18n="card-featured">Featured Brands</div>
-                        <h3 data-i18n="s6-title">Electrical Products &amp; Retail Shop</h3>
+                        <h3 data-i18n-sub="s6-title">Electrical Products &amp; Retail Shop</h3>
                         <p data-i18n="s6-desc">We stock and sell modular switches, faceplates, copper wires, conduit pipes, LEDs, and electrical building items from top-tier brands like Anchor, GM, Goldmedal, and Hi-Fi.</p>
                         <ul class="service-features">
                             <li><i data-lucide="check"></i> <span data-i18n="s6-f1">Top switches: Anchor, GM, Goldmedal, Hi-Fi</span></li>
@@ -297,8 +335,8 @@
         <div class="glow-effect-2"></div>
         <div class="container">
             <div class="section-header">
-                <span class="sub-title" data-i18n="shop-badge">Local Shop Products</span>
-                <h2 data-i18n="shop-title">Explore Our Shop Supplies</h2>
+                <span class="sub-title" data-i18n-sub="shop-badge">Local Shop Products</span>
+                <h2 data-i18n-sub="shop-title">Explore Our Shop Supplies</h2>
                 <p data-i18n="shop-desc">We stock a complete range of premium electrical items for your home, commercial project, or building construction in Davanagere.</p>
             </div>
 
@@ -320,7 +358,7 @@
                         <div class="product-badge">Anchor / GM / Goldmedal</div>
                     </div>
                     <div class="product-content">
-                        <h3 data-i18n="p1-name">Modular Switches &amp; Plates</h3>
+                        <h3 data-i18n-sub="p1-name">Modular Switches &amp; Plates</h3>
                         <p data-i18n="p1-desc">Premium quality modular switches, sleek faceplates, sockets, and regulators with multiple color options and smooth click actions.</p>
                         <div class="product-brands">
                             <span class="brand-tag">Anchor</span>
@@ -341,7 +379,7 @@
                         <div class="product-badge">Copper Wires &amp; Conduit Pipes</div>
                     </div>
                     <div class="product-content">
-                        <h3 data-i18n="p2-name">Copper Wires &amp; Cables</h3>
+                        <h3 data-i18n-sub="p2-name">Copper Wires &amp; Cables</h3>
                         <p data-i18n="p2-desc">Fire-retardant (FR), multi-strand flexible copper wiring cables for home, commercial, and industrial power distribution.</p>
                         <div class="product-brands">
                             <span class="brand-tag">Premium Copper</span>
@@ -361,7 +399,7 @@
                         <div class="product-badge">Indoor &amp; Outdoor Lighting</div>
                     </div>
                     <div class="product-content">
-                        <h3 data-i18n="p3-name">LED &amp; Decoration Lightings</h3>
+                        <h3 data-i18n-sub="p3-name">LED &amp; Decoration Lightings</h3>
                         <p data-i18n="p3-desc">Energy-saving LED panel lights, downlights, profile lighting, and decorative festival serial lights to illuminate your spaces.</p>
                         <div class="product-brands">
                             <span class="brand-tag">LED Panels</span>
@@ -381,7 +419,7 @@
                         <div class="product-badge">Electrical Construction Only</div>
                     </div>
                     <div class="product-content">
-                        <h3 data-i18n="p4-name">Building Electrical Materials</h3>
+                        <h3 data-i18n-sub="p4-name">Building Electrical Materials</h3>
                         <p data-i18n="p4-desc">Heavy-duty electrical PVC conduit pipes, metal junction boxes, DB boards, MCBs, insulation tapes, and building wiring fittings.</p>
                         <div class="product-brands">
                             <span class="brand-tag">Conduit Pipes</span>
@@ -401,8 +439,8 @@
     <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="section-header">
-                <span class="sub-title" data-i18n="gallery-badge">Our Store Visuals</span>
-                <h2 data-i18n="gallery-title">Explore Our Physical Shop &amp; Stock</h2>
+                <span class="sub-title" data-i18n-sub="gallery-badge">Our Store Visuals</span>
+                <h2 data-i18n-sub="gallery-title">Explore Our Physical Shop &amp; Stock</h2>
                 <p data-i18n="gallery-desc">Take a virtual tour of Sri Durgambika Enterprises in Davanagere. See our physical shopfront, customer counter, and actual product inventories in stock.</p>
             </div>
 
@@ -533,8 +571,8 @@
             </div>
             
             <div class="about-info-wrapper">
-                <span class="sub-title" data-i18n="about-badge">Who We Are</span>
-                <h2 data-i18n="about-title">Dedicated to Quality Electrical and Sound Services</h2>
+                <span class="sub-title" data-i18n-sub="about-badge">Who We Are</span>
+                <h2 data-i18n-sub="about-title">Dedicated to Quality Electrical Supplies and Services</h2>
                 <p data-i18n="about-p1">Located in the heart of Davanagere, <strong>Sri Durgambika Enterprises</strong> was established with a singular goal: to provide reliable, professional, and budget-friendly electrical services and premium retail sales.</p>
                 <p data-i18n="about-p2">Under the visionary leadership of our proprietor, <strong>Basavaraj</strong>, who is himself an expert electrician with years of field experience, we have successfully illuminated hundreds of homes, secured countless businesses with CCTV, and supplied top-quality electrical hardware for commercial and residential constructions.</p>
                 
@@ -542,14 +580,14 @@
                     <div class="value-item">
                         <i data-lucide="shield-check" class="value-icon"></i>
                         <div>
-                            <h4 data-i18n="about-v1-title">Safety First</h4>
+                            <h4 data-i18n-sub="about-v1-title">Safety First</h4>
                             <p data-i18n="about-v1-desc">We adhere to strict Indian electrical safety standards for all residential and commercial wiring.</p>
                         </div>
                     </div>
                     <div class="value-item">
                         <i data-lucide="users" class="value-icon"></i>
                         <div>
-                            <h4 data-i18n="about-v2-title">Community Trust</h4>
+                            <h4 data-i18n-sub="about-v2-title">Community Trust</h4>
                             <p data-i18n="about-v2-desc">Proudly serving Davanagere city and surrounding rural areas with local, prompt service.</p>
                         </div>
                     </div>
@@ -562,22 +600,22 @@
     <section id="contact" class="contact-section">
         <div class="container contact-container">
             <div class="contact-sidebar">
-                <span class="sub-title text-accent" data-i18n="contact-badge">Get In Touch</span>
-                <h2 data-i18n="contact-title">Let's Discuss Your Project or Booking</h2>
+                <span class="sub-title text-accent" data-i18n-sub="contact-badge">Get In Touch</span>
+                <h2 data-i18n-sub="contact-title">Let's Discuss Your Project or Purchase</h2>
                 <p data-i18n="contact-desc">Have questions about CCTV installation? Need a quick electrician visit in Davanagere? Or looking to purchase electrical supplies? Reach out and we will help you promptly.</p>
                 
                 <div class="contact-details">
                     <div class="contact-item">
                         <div class="icon-holder"><i data-lucide="map-pin"></i></div>
                         <div>
-                            <h4 data-i18n="contact-loc-title">Office Location</h4>
+                            <h4 data-i18n-sub="contact-loc-title">Office Location</h4>
                             <p><a href="https://maps.google.com/?q=14.453667,75.929083" target="_blank" class="map-link" data-i18n="contact-loc-desc">Durgambika Temple Road, Davanagere, Karnataka - 577002</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="icon-holder"><i data-lucide="phone-call"></i></div>
                         <div>
-                            <h4 data-i18n="contact-phone-title">Phone Numbers</h4>
+                            <h4 data-i18n-sub="contact-phone-title">Phone Numbers</h4>
                             <p><a href="tel:+919845511088"><strong>Basavaraj:</strong> +91 98455 11088</a></p>
                             <p><a href="tel:+918431796375"><strong>Darshan:</strong> +91 84317 96375</a></p>
                         </div>
@@ -585,14 +623,14 @@
                     <div class="contact-item">
                         <div class="icon-holder"><i data-lucide="mail"></i></div>
                         <div>
-                            <h4 data-i18n="contact-email-title">Email Address</h4>
+                            <h4 data-i18n-sub="contact-email-title">Email Address</h4>
                             <p><a href="mailto:darshanempire@proton.me">darshanempire@proton.me</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="icon-holder"><i data-lucide="clock"></i></div>
                         <div>
-                            <h4 data-i18n="contact-hours-title">Business Hours</h4>
+                            <h4 data-i18n-sub="contact-hours-title">Business Hours</h4>
                             <p data-i18n="contact-hours-desc">Monday - Sunday: 8:30 AM - 9:00 PM</p>
                             <p><small data-i18n="contact-hours-sub">(Emergency services available 24/7)</small></p>
                         </div>
@@ -606,7 +644,7 @@
 
             <div class="contact-form-wrapper">
                 <div class="form-header">
-                    <h3 data-i18n="form-title">Send a Direct Request</h3>
+                    <h3 data-i18n-sub="form-title">Send a Direct Request</h3>
                     <p data-i18n="form-desc">Fill out the form and it will prepare a quick WhatsApp message to Basavaraj!</p>
                 </div>
                 
@@ -660,7 +698,7 @@
             <div class="footer-brand">
                 <div class="logo">
                     <div class="logo-icon-svg">
-                        <img src="assets/logo.svg" alt="SDE Logo" class="logo-svg">
+                        <img src="assets/logo.png" alt="SDE Logo" class="logo-svg">
                     </div>
                     <div class="logo-text">
                         <span class="brand-name">Sri Durgambika</span>
@@ -676,7 +714,7 @@
             </div>
             
             <div class="footer-links">
-                <h3 data-i18n="footer-col1-title">Our Services</h3>
+                <h3 data-i18n-sub="footer-col1-title">Our Services</h3>
                 <ul>
                     <li><a href="#services" onclick="preselectService('electrician')">Electrician Services</a></li>
                     <li><a href="#services" onclick="preselectService('cctv')">CCTV Sales &amp; Services</a></li>
@@ -687,7 +725,7 @@
             </div>
 
             <div class="footer-links">
-                <h3 data-i18n="footer-col2-title">Product Catalog</h3>
+                <h3 data-i18n-sub="footer-col2-title">Product Catalog</h3>
                 <ul>
                     <li><a href="#shop" onclick="filterShop('switches')">Switches &amp; Plates</a></li>
                     <li><a href="#shop" onclick="filterShop('wires')">Wires &amp; Pipes</a></li>
@@ -697,7 +735,7 @@
             </div>
 
             <div class="footer-contact">
-                <h3 data-i18n="footer-col3-title">Contact Shop</h3>
+                <h3 data-i18n-sub="footer-col3-title">Contact Shop</h3>
                 <p><i data-lucide="phone"></i> <span><strong>Basavaraj:</strong> <a href="tel:+919845511088">+91 98455 11088</a></span></p>
                 <p><i data-lucide="phone"></i> <span><strong>Darshan:</strong> <a href="tel:+918431796375">+91 84317 96375</a></span></p>
                 <p><i data-lucide="mail"></i> <span><strong>Email:</strong> <a href="mailto:darshanempire@proton.me">darshanempire@proton.me</a></span></p>
@@ -706,6 +744,36 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Map strip -->
+    <section class="map-strip" aria-label="Shop location">
+        <div class="container map-strip-inner">
+            <div>
+                <h3 data-i18n-sub="map-title">Find us in Davanagere</h3>
+                <p data-i18n="map-desc">Durgambika Temple Road · Open daily · Click for Google Maps</p>
+            </div>
+            <a class="btn btn-primary" href="https://maps.google.com/?q=14.453667,75.929083" target="_blank" rel="noopener">
+                <i data-lucide="map"></i> Open in Maps
+            </a>
+        </div>
+        <div class="map-embed">
+            <iframe title="SDE location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=14.453667,75.929083&z=16&output=embed"></iframe>
+        </div>
+    </section>
+
+    <!-- Scroll to top -->
+    <button type="button" id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Mobile sticky action bar -->
+    <div class="mobile-action-bar" role="navigation" aria-label="Quick call actions">
+        <a href="tel:+919845511088"><i data-lucide="phone"></i><span>Basavaraj</span></a>
+        <a href="tel:+918431796375"><i data-lucide="phone"></i><span>Darshan</span></a>
+        <a class="wa" href="https://wa.me/919845511088" target="_blank" rel="noopener"><i data-lucide="message-square"></i><span>WhatsApp</span></a>
+    </div>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919845511088?text=Hi%20Basavaraj,%20I%20need%20to%20inquire%20about%20electrical%20services%20or%20shop%20products." class="whatsapp-floating" target="_blank" aria-label="Contact via WhatsApp">
