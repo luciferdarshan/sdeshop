@@ -324,7 +324,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // html lang for accessibility
         document.documentElement.lang = lang === "kn" ? "kn" : "en";
         if (langToggle) {
-            langToggle.textContent = lang === "en" ? "ಕನ್ನಡ" : "English";
+            const label = document.getElementById("langToggleLabel");
+            if (label) {
+                label.textContent = lang === "en" ? "ಕನ್ನಡ" : "English";
+            }
             langToggle.setAttribute("aria-pressed", lang === "kn" ? "true" : "false");
             langToggle.classList.toggle("is-kn", lang === "kn");
         }

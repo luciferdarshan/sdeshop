@@ -358,15 +358,68 @@ img {
     width: 100%;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
 .btn-whatsapp-header {
     background: #128c7e;
     box-shadow: 0 4px 10px rgba(18, 140, 126, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 22px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: var(--border-radius);
 }
 
 .btn-whatsapp-header:hover {
     background: #075e54;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(18, 140, 126, 0.5);
+}
+
+/* Match WhatsApp header button size/level */
+.btn-lang-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 22px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #d97706, #b45309);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.35);
+    transition: var(--transition-fast);
+}
+.btn-lang-header:hover,
+.btn-lang-header.is-kn {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(245, 158, 11, 0.45);
+}
+.btn-lang-header i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+.btn-whatsapp-header i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
 }
 
 /* Mobile Nav Toggle */
@@ -1857,27 +1910,7 @@ img {
     }
 }
 
-/* ===== Language toggle ===== */
-.lang-toggle {
-    appearance: none;
-    border: 1px solid var(--border-active);
-    background: rgba(59, 130, 246, 0.12);
-    color: var(--text-white);
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
-    padding: 0.5rem 0.85rem;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    white-space: nowrap;
-}
-.lang-toggle:hover,
-.lang-toggle.is-kn {
-    background: rgba(245, 158, 11, 0.18);
-    border-color: rgba(245, 158, 11, 0.55);
-    color: #fde68a;
-}
+/* Language toggle base styles live with .btn-lang-header above */
 
 /* ===== Quick action chips (hero) ===== */
 .quick-actions {
@@ -2026,8 +2059,27 @@ img {
     body { padding-bottom: 4.25rem; }
     .whatsapp-floating { bottom: 4.75rem; }
     .scroll-top-btn { bottom: 5.25rem; }
+    .header-actions {
+        gap: 8px;
+    }
+    .header-actions .btn-whatsapp-header,
+    .header-actions .btn-lang-header {
+        height: 40px;
+        padding: 0 14px;
+        font-size: 13px;
+    }
+    .header-actions .btn-whatsapp-header span,
+    .header-actions .btn-lang-header #langToggleLabel {
+        /* keep short labels on tablet; hide on very small below */
+    }
+}
+
+@media (max-width: 480px) {
     .header-actions .btn-whatsapp-header span { display: none; }
-    .lang-toggle { font-size: 0.78rem; padding: 0.45rem 0.65rem; }
+    .header-actions .btn-lang-header {
+        min-width: 40px;
+        padding: 0 12px;
+    }
 }
 
 /* Logo image sizing */
